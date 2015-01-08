@@ -43,12 +43,11 @@
       vertical-align: center;
       padding: 20px;
       border-top: 1px solid rgba(255, 255, 255, .4);
-    }  
-    
-    td .song-number {
-      padding: 0;
-      height: 70px;
-      text-align: center;
+        .song-number {
+          padding: 0;
+          height: 70px;
+          text-align: center;
+        } 
     }
 }
 
@@ -63,19 +62,16 @@
    height: 28px;
   
     &:hover {
-      $hoverDefault;
+      //$hoverDefault;
       background-color: $button-bg-color;
     }
-}
- 
-.album-song-button { 
 
-  i {
-    line-height: 28px;
-  }
+    i {
+      line-height: 28px;
+    }
  
-  .fa-play {
-    padding-left: 5px;
- }
+    .fa-play {
+      padding-left: 5px;
+    } 
 
 }

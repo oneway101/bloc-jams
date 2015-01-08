@@ -7,11 +7,11 @@
 $background-purple: #5B5579;
 $base-font-size: 16px;
 $button-bg-color: #d2287b;
-$hoverDefault:
+/*$hoverDefault:
   {
     cursor: pointer;
     color: white;
-  }
+  };*/
 
 /* define the mixin */
 @mixin radial-gradient($first_color, $second_color) {
