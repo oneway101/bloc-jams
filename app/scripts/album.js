@@ -158,7 +158,7 @@ var setupSeekBars = function(){
     });
 
     //cleanup
-    $(document).bind('mouseup.thumb',funciton(){
+    $(document).bind('mouseup.thumb',function(){
       $seekBar.removeClass('no-animate');
       
       $(document).unbind('mousemove.thumb');

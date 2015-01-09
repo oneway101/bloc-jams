@@ -8,7 +8,7 @@
    z-index: 100;
  
    a, a:hover {
-      //$hoverDeault;
+      @include mouse-hover;
       text-decoration: none;
    }
  
@@ -102,7 +102,8 @@
          vertical-align: middle;
       }
    }
- }
+}
+ 
 
  .player-bar-control-group {
     display: table-cell;
@@ -159,6 +160,7 @@
       margin-top: -10px;
       margin-left: -10px;
    }
+
 }
 
 

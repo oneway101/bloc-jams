@@ -70,8 +70,8 @@
         height: 42px;
 
         &:hover{
-          $hoverDeault;
-          background-color: button-bg-color;
+          @include mouse-hover;
+          background-color: $button-bg-color;
         }
 
         i {

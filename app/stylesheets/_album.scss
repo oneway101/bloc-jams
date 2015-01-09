@@ -8,9 +8,6 @@
    // Pushes the album information down and makes sure there's sufficient space at the bottom of the page
    margin-top: 45px;
    margin-bottom: 20px;
- }
-
-.album-header-information {
 
   h3, h4, h5 {
    // Modifying the line height allows us to increase the spacing above and
@@ -34,7 +31,9 @@
    font-weight: 500;
   }
 
-.table .album-song-listing {
+}
+
+.table.album-song-listing {
    // Override the font for the entire table.
    font-weight: 300;
    
@@ -42,12 +41,7 @@
     td {
       vertical-align: center;
       padding: 20px;
-      border-top: 1px solid rgba(255, 255, 255, .4);
-        .song-number {
-          padding: 0;
-          height: 70px;
-          text-align: center;
-        } 
+      border-top: 1px solid rgba(255, 255, 255, .4); 
     }
 }
 
@@ -55,14 +49,14 @@
    text-align: center;
    font-size: 14px;
    background-color: white;
-   color: #d2287b;
+   color: $button-bg-color;
    border-radius: 50% 50%;
    display: inline-block;
    width: 28px;
    height: 28px;
   
     &:hover {
-      //$hoverDefault;
+      @include mouse-hover;
       background-color: $button-bg-color;
     }
 
@@ -74,4 +68,10 @@
       padding-left: 5px;
     } 
 
+}
+
+td.song-number {
+  padding: 0;
+  height: 70px;
+  text-align: center;
 }
