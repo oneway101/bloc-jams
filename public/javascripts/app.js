@@ -263,12 +263,14 @@ var setupSeekBars = function(){
 };
 
 
+
+
 });
 
 ;require.register("scripts/app", function(exports, require, module) {
 //require("./landing");
 //require("./collection");
-//require("./album");
+require("./album");
 //require("./profile");
 
  angular.module('BlocJams', []).controller('Landing.controller', ['$scope', function($scope) {
