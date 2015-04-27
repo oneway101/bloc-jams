@@ -114,11 +114,21 @@ blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($s
   $scope.songPlayer = SongPlayer;
 
   $scope.volumeClass = function(){
+    if (SongPlayer.isMuted()) {
+      return {
+        'fa-volume-off': true
+      };
+    };
+
     return {
       'fa-volume-off': SongPlayer.volume == 0,
-      'fa-volume-down': SongPlayer.volume <= 70 && SongPlayer.volume > 0,
-      'fa-volume-up': SongPlayer.volume > 70 
-    }
+      'fa-volume-down': (SongPlayer.volume <= 70 && SongPlayer.volume > 0),
+      'fa-volume-up': SongPlayer.volume > 70
+    };
+  }
+
+  $scope.muteSong = function(){
+      SongPlayer.mute();
   }
 
     SongPlayer.onTimeUpdate(function(event,time){
@@ -129,7 +139,7 @@ blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($s
 
 }]);
 
-  blocJams.service('SongPlayer', ['$rootScope', function($rootScope){
+  blocJams.service('SongPlayer', function($rootScope){
     var currentSoundFile = null;
 
     var trackIndex = function(album, song){
@@ -167,7 +177,7 @@ blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($s
           currentTrackIndex = this.currentAlbum.songs.length - 1;
         }
         var song = this.currentAlbum.songs[currentTrackIndex];
-        this
+        this.setSong(this.currentAlbum, song);
       },
       seek: function(time) {
         // Checks to make sure that a sound file is playing before seeking.
@@ -184,6 +194,14 @@ blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($s
           currentSoundFile.setVolume(volume);
         }
         this.volume = volume;
+      },
+      mute: function(volume) {
+        currentSoundFile.toggleMute();
+      },
+      isMuted: function() {
+        return currentSoundFile ? 
+          currentSoundFile.isMuted() : 
+          false;
       },
       setSong: function(album, song){
         if(currentSoundFile){
@@ -204,10 +222,9 @@ blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($s
 
         this.play();
       }
-
     };
 
-  }]);
+  });
 
 blocJams.directive('slider', ['$document', function($document){
 
@@ -331,8 +348,9 @@ blocJams.filter('timecode', function(){
      output += remainingSeconds;
  
      return output;
-   }
- })
+   };
+ });
+
 
 
 
