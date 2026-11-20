@@ -28,9 +28,9 @@
     "coffeelint-brunch": "1.5",
     "ugly-blanket-brunch": "~1.5.3",
     "async": "0.2",
-    "socket.io": "0.9",
-    "express": "3.4",
-    "debug": "~0.7.2",
+    "socket.io": "4.8",
+    "express": "5.3",
+    "debug": "~4.4.3",
     "ansi-color": "0.2",
     "date-utils": "1.2",
     "cordell": "0.1",
@@ -44,7 +44,7 @@
     "express-namespace": "*",
     "passport-local": "*",
     "passport": "*",
-    "bower": "1.3.8"
+    "bower": "1.8.9"
   },
   
   "devDependencies": {
@@ -55,7 +55,7 @@
     "supertest": "*",
     "blanket": "*",
     "auto-reload-brunch": "1.7",
-    "karma": "~0.12.16",
+    "karma": "~6.4.4",
     "karma-ng-scenario": "~0.1.0",
     "karma-mocha": "~0.1.3",
     "karma-chrome-launcher": "~0.1.4",
